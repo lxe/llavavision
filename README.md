@@ -1,6 +1,8 @@
 # LLaVaVision
 
-A simple "Be My Eyes" web app created in about an hour using ChatGPT, Copilot, and some minor help from me, [@lxe](https://twitter.com/lxe)
+![Screenshot](screenshot.gif)
+
+A simple "Be My Eyes" web app with a llama.cpp/llava backend created in about an hour using ChatGPT, Copilot, and some minor help from me, [@lxe](https://twitter.com/lxe)
 
 Inspired by [Fuzzy-Search/realtime-bakllava](https://github.com/Fuzzy-Search/realtime-bakllava).
 
@@ -62,3 +64,9 @@ Access https://your-machine-ip:5000 from your mobile device. Optionally, start a
 ```
 npx localtunnel --local-https --allow-invalid-cert --port 5000
 ```
+
+### Acknowledgements and Inspiration
+
+- [Fuzzy-Search/realtime-bakllava](https://github.com/Fuzzy-Search/realtime-bakllava)
+- [Multimodal LLama.cpp](https://github.com/ggerganov/llama.cpp/issues/3332)
+- [llava-vl.github.io](https://llava-vl.github.io/)
