@@ -1,0 +1,45 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+#videoElement {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#description {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+#controls {
+    margin-bottom: 10px;
+}
+
+button {
+    margin: 5px;
+}

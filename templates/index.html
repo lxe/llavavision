@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Describe World</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <video id="videoElement" autoplay playsinline></video>
+  <div id="overlay">
+    <div id="description"></div>
+    <div id="controls">
+      <button id="switchCamera">Switch Camera</button>
+      <button id="describe">Describe</button>
+      <button id="narrate">Narrate</button>
+      <button id="clear">Clear</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
