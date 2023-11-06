@@ -2,11 +2,13 @@
 
 ![Screenshot](screenshot.gif)
 
-A simple "Be My Eyes" web app with a llama.cpp/llava backend created in about an hour using ChatGPT, Copilot, and some minor help from me, [@lxe](https://twitter.com/lxe)
+A simple "Be My Eyes" web app with a llama.cpp/llava backend created in about an hour using ChatGPT, Copilot, and some minor help from me, [@lxe](https://twitter.com/lxe). It describes what it sees using [SkunkworksAI BakLLaVA-1](https://huggingface.co/SkunkworksAI/BakLLaVA-1) model via [llama.cpp](https://github.com/ggerganov/llama.cpp) and narrates the text using [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API).
 
 Inspired by [Fuzzy-Search/realtime-bakllava](https://github.com/Fuzzy-Search/realtime-bakllava).
 
 ### Getting Started
+
+You will need a machine with about ~5 GB of RAM/VRAM for the q4_k version.   
 
 #### Set up the llama.cpp server
 
@@ -71,3 +73,4 @@ npx localtunnel --local-https --allow-invalid-cert --port 5000
 - [Fuzzy-Search/realtime-bakllava](https://github.com/Fuzzy-Search/realtime-bakllava)
 - [Multimodal LLama.cpp](https://github.com/ggerganov/llama.cpp/issues/3332)
 - [llava-vl.github.io](https://llava-vl.github.io/)
+- [SkunkworksAI/BakLLaVA-1](https://huggingface.co/SkunkworksAI/BakLLaVA-1)
