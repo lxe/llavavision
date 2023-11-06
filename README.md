@@ -50,6 +50,7 @@ git clone https://github.com/lxe/llavavision
 cd llavavision
 python3 -m venv venv 
 . ./venv/bin/activate
+pip install -r requirements.txt
 ```
 
 Create dummy certificates and start the server. HTTPS is required for mobile video functionality:
