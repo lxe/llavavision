@@ -1,0 +1,40 @@
+# An example docker-compose file for running LlamaVision with CUDA
+services:
+  &name llavavision:
+    container_name: *name
+    hostname: *name
+    # profiles:
+    #   - *name
+    build:
+      context: https://github.com/lxe/llavavision.git#main
+      dockerfile: Dockerfile
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
+      TUNNEL: false
+      UID: 1001
+      CERT_SUBJ: "/C=GB/ST=LON/O=LlamaOrg, Inc./CN=llavavision.local"
+      DEBUG: true
+      PORT: 5000
+      NLG: 35
+      TS: "100,0" # For GPU-only, single GPU
+    shm_size: "4gb"
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: ["compute", "utility", "graphics"]
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - models:/app/models
+    ports:
+      - 5000:5000
+      # - 8080:8080 # If you want to access llama.cpp from outside the container you can use this port
+
+volumes:
+  models:
