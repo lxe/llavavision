@@ -68,6 +68,31 @@ Access https://your-machine-ip:5000 from your mobile device. Optionally, start a
 npx localtunnel --local-https --allow-invalid-cert --port 5000
 ```
 
+## Alternative: MiniMax Cloud Vision Backend
+
+Don't want to run llama.cpp locally? You can use [MiniMax](https://www.minimax.io/)'s cloud vision API instead. MiniMax M2.7 is a multimodal model that can describe images directly from the cloud — no GPU required.
+
+Set the `VISION_BACKEND` environment variable to `minimax` and provide your API key:
+
+```shell
+export VISION_BACKEND=minimax
+export MINIMAX_API_KEY=your_api_key_here
+# Optional: choose a specific model (default: MiniMax-M2.7)
+export MINIMAX_MODEL=MiniMax-M2.7-highspeed
+flask run --host=0.0.0.0 --key key.pem --cert cert.pem --debug
+```
+
+Available MiniMax models:
+
+| Model | Context | Notes |
+|---|---|---|
+| `MiniMax-M2.7` | 204K | Latest, most capable |
+| `MiniMax-M2.7-highspeed` | 204K | Faster responses |
+
+Get an API key at [https://www.minimax.io/](https://www.minimax.io/).
+
+The default backend remains `llamacpp` (local llama.cpp server). Switch between backends at any time using the `VISION_BACKEND` env var.
+
 ## Acknowledgements and Inspiration
 
 - [Fuzzy-Search/realtime-bakllava](https://github.com/Fuzzy-Search/realtime-bakllava)
